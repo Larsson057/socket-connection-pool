@@ -1,0 +1,14 @@
+[project]
+name = "socket-connection-pool"
+version = "0.1.0"
+description = "Manage a bounded pool of keep-alive TCP connections keyed by host and port with idle eviction."
+requires-python = ">=3.10"
+dependencies = []
+readme = "README.md"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
