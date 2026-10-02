@@ -1,6 +1,6 @@
 [project]
 name = "socket-connection-pool"
-version = "0.1.0"
+version = "0.1.1"
 description = "Manage a bounded pool of keep-alive TCP connections keyed by host and port with idle eviction."
 requires-python = ">=3.10"
 dependencies = []
