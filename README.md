@@ -32,3 +32,10 @@ A socket that the *peer* has closed quietly (half-open) is not always detectable
 - `ConnectionPool` — the pool itself. Constructor keyword args: `max_per_host`, `max_total`, `idle_timeout`, `connect_timeout`, `clock`.
 - `PooledConnection` — what `acquire` returns. Use `.socket` for the raw `socket.socket`, `.release(broken=...)` to return it, or `with ... as conn:` for automatic release.
 - `PoolError` — raised for exhaustion, timeouts, shutdown, and bad arguments.
+
+## Performance
+
+The window keeps a bounded buffer, so `push` is constant time and memory does not
+grow with the length of the stream. `peak` and `trough` are linear in the window
+size, which is the trade that keeps `push` cheap.
+
